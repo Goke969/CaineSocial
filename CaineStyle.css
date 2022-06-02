@@ -1,0 +1,971 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/*This is the Hamburger menu*/
+
+.hamburger-menu{
+    width:2rem;
+    height:2rem;
+    top: 3rem;
+    right: 3rem;
+    position: fixed;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    transition: right 0.7s;
+}
+.change .hamburger-menu{
+    right: 17rem;
+}
+.hamburger-menu span{
+    position: absolute;
+    width: 4rem;
+    height: 1.5rem;
+    left: 3.5rem;
+    top: -0.6rem;
+    font-size: 0.8rem;
+    background-color: chartreuse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Baloo Tammudu 2', cursive;
+    letter-spacing: 0.3rem;
+    visibility: hidden;
+  
+}
+
+
+.line{
+    width: 100%;
+    height: .2rem;
+    background-color: chartreuse;
+}
+
+.change .line-1{
+    transform: rotate(45deg)
+    translate(0.3rem, -0.8rem);
+}
+.change .line-2{
+    opacity: 0;
+    visibility: hidden;
+}
+.change .line-3{
+    transform: rotate(-45deg)
+    translate(1.55rem, -0.5rem);
+}
+
+/* Web header*/
+.header{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-image: url(./images/caine1.jpg), url(./images/cane2.jpg), url(./images/cane3.jpg), url(./images/cane4.jpg), url(./images/cane5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    animation: slide 20s infinite;
+    animation-delay: 5s;
+}
+
+@keyframes slide {
+    0%{
+        background-image: url(./images/caine1.jpg);
+    }
+    25%{
+        background-image: url(./images/cane2.jpg);
+    }
+    50%{
+        background-image: url(./images/cane3.jpg);
+    }
+    100%{
+        background-image: url(./images/cane4.jpg);
+    }
+    90%{
+        background-image: url(./images/cane5.jpg);
+    }
+    95%{
+        background-image: url(./images/caine1.jpg);
+    }
+
+
+}
+
+
+.header h1{
+    font-family: 'cocacolaii' !important;
+    font-size: 10rem;
+    font-weight: normal;
+    color: chartreuse;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    text-shadow: 0 0.3rem 0.5rem rgb(0,0,0,0.4);
+    animation: fade 2s forwards ; 
+}
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header h1 {
+      font-size: 5rem;
+    }
+    
+}
+
+
+.header p{
+    font-family: 'Baloo Tammudu 2', cursive;
+    color: black;
+    position: absolute;
+    top: 46%;
+    left: 16%; 
+    font-size: 1.2rem;
+    text-shadow: 0 0.3rem 0.5rem rgb(0,0,0,0.4);   
+    animation: fadep 6s forwards;
+}
+@keyframes fadep{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:768px){
+    .header p{
+        font-size: 0.65rem;
+        top: 40%;
+    }
+    
+}
+
+    
+.header button{
+    color: white;
+    background-color: chartreuse;
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    width: 10rem;
+    height: 2rem;
+    font-size: medium;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    box-shadow:0 0.2rem 0.4rem rgb(0,0,0,0.2);
+    text-shadow:0 0.3rem 0.5rem rgb(0,0,0,0.4);
+    animation: buttonfade 6s forwards;
+}
+@keyframes buttonfade{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:768px){
+    .header button{
+        top: 45%;       
+    }    
+}
+
+.side-bar{
+    width: 20rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right:-20rem;
+    z-index: 150;
+    background-color: white;
+    transition: right 0.5s; 
+}
+.change .side-bar{
+    right: 0;
+}
+.menu{
+    position: absolute;
+    top: 40%;
+    right: 0%;
+    transform: translate(-50%, -50%);
+}
+.menu-list{
+    text-align: center;
+    line-height: 3rem;
+}
+.menu-link{
+    font-size: 2rem;
+    font-family: 'Baloo Tammudu 2', cursive;
+    color: chartreuse;
+    transition: color 0.5s;
+}
+.menu-link:hover{
+    color: black;
+}
+
+
+.sm-icons{
+    position: absolute;
+    bottom: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+.sm-icons i{
+    font-size: 2rem;
+    margin: 1.5rem;
+    color: white;
+    background-color: chartreuse;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 0.5s;
+}
+.sm-icons i:hover{
+    background-color: black;
+}
+
+
+/*Photography Section*/
+
+.photography {
+    width: 100%;
+    height: 200%;
+    overflow: hidden;
+    position: relative; 
+    background-color: #e7e7e7;
+    padding: 0 3rem 12rem 3rem;
+    
+}
+
+.photography-header {
+    font-family: 'Baloo Tammudu 2', cursive;
+    text-align: center;
+    margin-top: 40px;
+    color: chartreuse;
+}
+
+.photography-header img{
+    width: 10rem;
+    opacity: 0.3;
+
+}
+
+
+.photo img{
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 4rem rgb(0,0,0,0.4);
+}
+
+.product-photo{
+    position: relative;
+}
+.fragrance {
+   float: right;
+   margin-top: 5rem;
+   margin-right: 7rem;
+}
+
+.makeup{
+    float: right;
+    margin-top: 5rem;
+    margin-right: 7rem;
+}
+
+.skincare{
+    float: left;
+    margin-top: 5rem;
+    margin-left: 7rem;
+}
+
+.fashion{
+    float: left;
+    margin-top: 5rem;
+    margin-left: 7rem;
+}
+
+.photo-text{
+    font-family: 'Cormorant Upright';
+    position: absolute;
+    top: 23rem;
+    left: 18rem;
+    background-color: tan;
+    padding: 2rem;
+    border-radius: 0.2rem;
+    letter-spacing: 0.2rem;
+    font-weight: 5rem;
+}
+@media screen and (max-width:1300px){
+    .skincare{
+        position: relative;
+        float: none;
+        display: flex;
+        justify-content: center;
+        margin: 5rem 0 0 0;
+       
+    }
+    .fragrance{
+        position: relative;
+        float: none;
+        display: flex;
+        justify-content: center;
+        margin: 5rem 0 0 0;
+       
+    }
+    .makeup{
+        position: relative;
+        float: none;
+        display: flex;
+        justify-content: center;
+        margin: 5rem 0 0 0;
+       
+    }
+    .fashion{
+        position: relative;
+        float: none;
+        display: flex;
+        justify-content: center;
+        margin: 5rem 0 0 0;
+    }
+
+    .skincare-text{
+        position: absolute;
+        top: 80%;
+        left: 43%;
+    }
+
+    .makeup-text{
+        position: absolute;
+        top: 80%;
+        left: 44%;
+    }
+
+    .fragrance-text{
+        position: absolute;
+        top: 80%;
+        left: 43%;
+    }
+
+    .fashion-text{
+        position: absolute;
+        top: 80%;
+        left: 44%;
+    }
+}
+
+@media screen and (max-width:1024px){
+    .skincare-text{
+        position: absolute;
+        top: 80%;
+        left: 41.5%;
+    }
+
+    .makeup-text{
+        position: absolute;
+        top: 80%;
+        left: 43%;
+    }
+
+    .fragrance-text{
+        position: absolute;
+        top: 80%;
+        left: 41.5%;
+    }
+
+    .fashion-text{
+        position: absolute;
+        top: 80%;
+        left: 44%;
+    }
+}
+
+@media screen and (max-width:768px){
+
+    .skincare-text{
+        position: absolute;
+        top: 80%;
+        left: 38%;
+    }
+
+    .makeup-text{
+        position: absolute;
+        top: 80%;
+        left: 40%;
+    }
+
+    .fragrance-text{
+        position: absolute;
+        top: 80%;
+        left: 37%;
+    }
+
+    .fashion-text{
+        position: absolute;
+        top: 80%;
+        left: 41%;
+    }
+}
+
+@media screen and (max-width:430px){
+    .skincare-text{
+        position: absolute;
+        top: 80%;
+        left: 31%;
+    }
+    .makeup-text{
+        position: absolute;
+        top: 80%;
+        left:34%;    
+    }
+    .fragrance-text{
+        position: absolute;
+        top: 80%;
+        left: 31%;
+    }
+    .fashion-text{
+        position: absolute;
+        top: 80%;
+        left: 36%;
+    }
+    .photo img{
+        width: 25rem;
+        height: 25rem;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        box-shadow: 0 1rem 4rem rgb(0,0,0,0.4);
+    }
+    .skincare img{
+        width: 22rem;
+        height: 22rem;
+    }
+    .makeup img{
+        width:22rem;
+        height: 22rem;
+    }
+    .photo-text{
+        padding: 1.2rem;
+        border-radius: 0.2rem;
+        letter-spacing: 0.2rem;
+        font-weight: 5rem;
+    }
+}
+
+@media screen and (max-width:320px){
+    .skincare-text{
+        left: 25%;
+    }
+    .makeup-text{
+        left: 30%;
+    }
+    .fragrance-text{
+        left: 23%;
+    }
+    .fashion-text{
+        left: 30%;
+    }
+}
+
+/*.photo-button{
+    color: white;
+    background-color: chartreuse;
+    position: absolute;
+    top: 95%;
+    left: 45%;
+    width: 10rem;
+    height: 2rem;
+    font-size: medium;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    box-shadow:0 0.2rem 0.4rem rgb(0,0,0,0.2);
+    text-shadow:0 0.3rem 0.5rem rgb(0,0,0,0.4);
+}
+
+@media screen and (max-width: 600px) {
+    .photo-button{
+        top: 98.5%;
+        left: 35%;
+    }
+}*/
+
+.videos{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative; 
+    padding: 0 3rem 6rem 3rem;
+    background-color: rgb(238, 232, 221);
+}
+
+.video-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: chartreuse;
+    font-family: 'Baloo Tammudu 2', cursive;
+    text-align: center;
+    padding: 3rem 0 3rem 0   
+}
+.video-header img{
+    width: 10rem;
+    opacity: 0.3;
+}
+.product-video{
+    position: relative;
+}
+.product-video video{
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 4rem rgb(0,0,0,0.4);
+}
+
+.Moobi{
+   float: right;
+   margin-right: 7rem;
+   margin-top: 5rem;
+  
+}
+.ShoeSensei{
+    float: left;
+    margin-left: 7rem;
+    margin-top: 5rem;
+} 
+.Tiwi{
+    float: left;
+    margin-left: 7rem;
+    margin-top: 5rem;
+   
+
+}
+
+.video{
+    position: relative;
+}
+
+.video-text{
+    font-family: 'Cormorant Upright';
+    background-color: tan;
+    padding: 2rem;
+    position: absolute;
+    top: 23rem;
+    left: 18rem;
+    border-radius: 0.2rem;
+    letter-spacing: 0.2rem;
+    font-weight: 5rem;
+}
+@media screen and (max-width:1300px){
+    .ShoeSensei{
+        position: relative;
+        float: none;
+        display: flex;
+        justify-content: center;
+        margin: 5rem 0 0 0;
+       
+    }
+
+    .Moobi{
+        position: relative;
+        float: none;
+        display: flex;
+        justify-content: center;
+        margin: 5rem 0 0 0;
+       
+    }
+    
+    .Tiwi{
+        position: relative;
+        float: none;
+        display: flex;
+        justify-content: center;
+        margin: 5rem 0 0 0;
+    }
+
+    .ShoeSensei-text{
+        position: absolute;
+        top: 80%;
+        left: 43%;
+    }
+
+    .Moobi-text{
+        position: absolute;
+        top: 80%;
+        left: 44%;
+    }
+
+    .Tiwi-text{
+        position: absolute;
+        top: 80%;
+        left: 44%;
+    }
+}
+@media screen and (max-width: 768px) {
+
+    .ShoeSensei-text{
+        position: absolute;
+        top: 80%;
+        left: 37.5%;
+    }
+
+    .Moobi-text{
+        position: absolute;
+        top: 80%;
+        left: 41%;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .product-video video{
+        width: 22rem;
+        height: 22rem;
+    }
+    .video-text{
+        padding: 1.2rem;
+        border-radius: 0.2rem;
+        letter-spacing: 0.2rem;
+        font-weight: 5rem;
+    }
+    .ShoeSensei-text{
+        position: absolute;
+        left: 30%;
+    }
+    .Moobi-text{
+        left: 36%;
+    }
+    .Tiwi-text{
+        left: 39%;
+    }
+}
+
+@media screen and (max-width:320px){
+    .ShoeSensei-text{
+        left: 20%;
+    }
+    .Moobi-text{
+        left: 28%;
+    }
+    .Tiwi-text{
+        left: 32%;
+    }
+}
+
+
+
+
+/*about-us*/
+
+.aboutus{
+    width: 100%;
+    height: 200vh;
+    overflow: hidden;
+    position: relative; 
+    background-color:rgb(248, 237, 244);
+}
+.aboutus-header{
+    font-family: 'Baloo Tammudu 2', cursive;
+    text-align: center;
+    margin-top: 40px;  
+    color: chartreuse; 
+}
+.aboutus-header img{
+    width: 10rem;
+    opacity: 0.3;
+}    
+
+.aboutus-paragraph{
+    padding: 5rem 20rem 5rem 20rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    
+}
+.feedback{
+    position: relative;
+    padding-bottom: 30px;
+    text-align: center;
+    font-family: 'Baloo Tammudu 2', cursive;
+    opacity: 0.7;
+}
+.feedback-underline{
+    position: absolute;
+    left: 45.3%;
+    width: 9rem;
+    height: 0.3rem;
+    background-color: chartreuse;
+    margin-bottom: 5rem;
+}
+.aboutus-test{
+    width: 100%;
+    height: 100%;
+    display:grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(7, 5rem);
+    grid-row-gap: 4rem; 
+}
+.test{
+     margin-top: 20px;
+    margin-bottom: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+.test:nth-child(1){
+    grid-column: 3/6;
+    grid-row: 1/2;
+}
+.test:nth-child(2){
+    grid-column: 2/5;
+    grid-row: 3/4;
+}
+.test:nth-child(3){
+    grid-column: 3/6;
+    grid-row: 5/6;
+}
+.test:nth-child(4){
+    grid-column: 12/15;
+    grid-row: 1/2;
+}
+.test:nth-child(5){
+    grid-column: 13/16;
+    grid-row: 3/4;
+}
+.test:nth-child(6){
+    grid-column: 12/15;
+    grid-row: 5/6;
+}
+.test:nth-child(7){
+    grid-column: 7/11;
+    grid-row: 3/4;
+}
+.quote-left{
+    margin-left: -2rem;
+    opacity: 0.5;
+}
+.quote-right{
+    margin-left: 16rem;
+    opacity: 0.5;
+}
+
+@media screen and (max-width:1440px){
+    .feedback-underline{
+        left: 45%;
+    }
+}
+@media screen and (max-width:1024px){
+    .feedback-underline{
+        left: 43%;
+    }
+}
+@media screen and (max-width:768px){
+    .feedback-underline{
+        left: 40.5%;
+    }
+    .aboutus-test{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1rem;
+        width: 80%;
+        height: 100%;
+        grid-row-gap: 1rem; 
+        padding-left: 10rem;
+    }
+    .aboutus-paragraph{
+        padding: 2rem 5rem 2rem 5rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1rem;
+    }
+    .quote-right{
+        margin-left: 21rem;
+    }
+}
+
+@media screen and (max-width:450px){
+
+    .aboutus{
+        width: 100%;
+        height: auto;
+    }
+
+    .feedback-underline{
+        left: 35%;
+        width: 8rem;
+        height: 0.2rem;
+    }
+    .aboutus-paragraph{
+        padding: 1rem 2rem 1rem 2rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 0.8rem;
+    }
+    .aboutus-test{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8rem;
+        width: 90%;
+        height: 100%;
+        grid-row-gap: 0.1rem; 
+        padding-left: 5rem;
+        
+    }
+    .feedback{
+        padding-bottom: 15px;
+        text-align: center;
+        font-family: 'Baloo Tammudu 2', cursive;
+        opacity: 0.7;
+        font-size: 1rem;
+    }
+    .quote-right{
+        margin-left: 15rem;
+        opacity: 0.5;
+    }
+}
+
+@media screen and (max-width:380px){
+    .feedback-underline{
+        left: 33%;
+    }
+}
+
+@media screen and (max-width:320px){
+    .feedback-underline{
+        left: 30%;
+    }
+    .quote-left{
+        margin-left: -2.5rem;
+    }
+    .quote-right{
+        margin-left: 13rem;
+    }
+    .aboutus-test{
+        padding-left: 3.5rem;
+    }
+}
+
+
+/*CONTACT-US*/
+
+.contact-us{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #FFFFFF;
+}
+
+.right-card{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    padding: 20rem;
+    background-color: #36454f;
+    float: right;
+}
+.contact-element{
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    color: #36454f;
+}
+.contact-header{
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+.cont-address{
+    margin-bottom: 7rem;     
+}
+.cont-phone{
+    margin-bottom: 7rem;  
+}
+.cont-email{
+    margin-bottom: 7rem;  
+}
+.cont-website{
+    margin-bottom: 7rem;  
+}
+.cont-dsp{
+    margin-left: 4rem;
+    margin-top: -1.3rem;
+}
+.left-card{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    padding: 25rem 20rem;
+    background-color: #FFFFFF;
+    float: left;
+}
+.clr{
+    clear: both;
+}
+
+.contact-form{
+    position: absolute;
+    display: block;
+   text-align: center;
+   top: 5%;
+   left: 25%;
+   color: #fff;
+}
+
+.form-header{
+    font-size: 3rem;
+    
+}
+.input{
+    width: 100%;
+    height: 2rem;
+}
+.form-submit{
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+.form-submit:hover{
+    background-color: chartreuse;
+    color: #fff;
+}
+
+
+
+    
